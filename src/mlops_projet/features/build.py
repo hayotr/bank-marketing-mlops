@@ -24,6 +24,7 @@ def build_features(df):
         bins=[17, 29, 45, 60, 100],
         labels=["18-29", "30-45", "46-60", "61+"],
     ).astype(str)
+    features["a_un_pret"] = ((df["housing"] == "yes") | (df["loan"] == "yes")).astype(int)
     return features
 
 
